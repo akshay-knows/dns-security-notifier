@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .header h2 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .status-container {
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .status-secure {
+      background: linear-gradient(135deg, #00AA00 0%, #00DD00 100%);
+      color: white;
+    }
+    
+    .status-warning {
+      background: linear-gradient(135deg, #FF6600 0%, #FF8833 100%);
+      color: white;
+    }
+    
+    .status-icon {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .status-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .status-description {
+      font-size: 14px;
+      text-align: center;
+      opacity: 0.95;
+    }
+    
+    .info-section {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .info-title {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    
+    .info-text {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .legend {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+    }
+    
+    .legend-item {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .legend-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 12px;
+      color: white;
+      margin-bottom: 5px;
+    }
+    
+    .legend-label {
+      font-size: 11px;
+      color: #666;
+    }
+    
+    .badge-doh {
+      background: #00AA00;
+    }
+    
+    .badge-dns {
+      background: #FF6600;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>DNS Security Status</h2>
+  </div>
+  
+  <div id="status-display" class="status-container">
+    <div class="status-icon">🔒</div>
+    <div class="status-title">Checking...</div>
+    <div class="status-description">Analyzing DNS configuration</div>
+  </div>
+  
+  <div class="info-section">
+    <div class="info-title">What is DNS over HTTPS?</div>
+    <div class="info-text">
+      DoH encrypts your DNS queries, preventing ISPs and others from seeing which websites you visit.
+    </div>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-badge badge-doh">DoH</div>
+      <div class="legend-label">Encrypted DNS</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-badge badge-dns">DNS</div>
+      <div class="legend-label">Plain DNS</div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
