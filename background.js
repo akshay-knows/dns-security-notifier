@@ -99,6 +99,7 @@ function updateIcon(tabId) {
     badgeColor = '#FF6600';
   }
   
+  chrome.action.setIcon({ path: iconPath, tabId: tabId });
   chrome.action.setBadgeText({ text: badgeText, tabId: tabId });
   chrome.action.setBadgeBackgroundColor({ color: badgeColor, tabId: tabId });
 }
